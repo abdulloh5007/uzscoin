@@ -27,3 +27,9 @@
         max-width: 1300px;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .App {
+        max-width: 1100px;
+    }
+}

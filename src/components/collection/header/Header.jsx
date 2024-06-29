@@ -8,6 +8,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 // import LinkIcon from '@mui/icons-material/Link';
 
 import { Box, Button, Snackbar } from '@mui/material';
+import { collections } from '../../../data/collections';
 
 function Header() {
   const myClass = (e) => {
@@ -34,6 +35,18 @@ function Header() {
     setState({ ...state, open: false });
   };
 
+  // Функция для нахождения минимальной цены
+  const getFloorPrice = (collections) => {
+    return Math.min(...collections.map(item => item.price));
+  };
+
+  const getTotalVolume = (collections) => {
+    return collections.reduce((total, item) => total + item.price, 0);
+  };
+
+  const floorPrice = getFloorPrice(collections);
+  const totalVolume = getTotalVolume(collections)
+
   // UQDmO3JOb8qIEyF6PEcqfhUL0AYTDLMEnR1kgc-kFejYpzjz
   return (
     <div className={myClass('')}>
@@ -48,7 +61,7 @@ function Header() {
           <div className="left">
             <h4>Uzscoin Pre-Market <img src={tick} alt="tick" /></h4>
             <h6>@uzscoin_market</h6>
-            <p>Notcoin Pre-Market vouchers represent the in-game Notcoin currency, which can be exchanged for $NOT after a token generation event.</p>
+            <p>Uzscoin Pre-Market vouchers represent the in-game Uzscoin currency, which can be exchanged for $UZS after a token generation event.</p>
             <h6>
               created by: <span>UQDmO3...pzjz</span> <Button onClick={handleClick({ vertical: 'bottom', horizontal: 'left' })} variant='text'><ContentCopyIcon className='icon'/></Button>
               <textarea
@@ -66,9 +79,9 @@ function Header() {
           </div>
           <div className="center"></div>
           <div className="right">
-            <h6>Items <span>100K</span></h6>
-            <h6>Floor price <span>20</span></h6>
-            <h6>Total volume <span>200K</span></h6>
+            <h6>Items <span>{collections.length}</span></h6>
+            <h6>Floor price <span>{floorPrice}$</span></h6>
+            <h6>Total volume <span>{totalVolume}</span></h6>
           </div>
         </div>
       </div>
