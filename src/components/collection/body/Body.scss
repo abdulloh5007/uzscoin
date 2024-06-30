@@ -1,5 +1,8 @@
 .collection-body {
     margin: -40px 30px;
+    .myChart {
+        background-color: white;
+    }
     &-top {
         .myBtn2 {
             display: none;
@@ -147,6 +150,7 @@
                 justify-content: flex-end;
                 flex-wrap: wrap;
                 gap: 20px;
+                width: 100%;
                 .card {
                     background-color: transparent;
                     border-radius: 20px;
@@ -372,6 +376,7 @@
                 }
                 .right {
                     justify-content: center;
+                    width: 100%;
                 }
             }
         }

@@ -12,6 +12,7 @@ import Filter from '@mui/icons-material/FilterListOutlined';
 import Settings from '@mui/icons-material/SettingsOutlined';
 
 import { collections } from '../../../data/collections';
+import Chart from 'react-google-charts';
 
 function Body() {
   const [value, setValue] = useState(0);
@@ -45,6 +46,36 @@ function Body() {
   //     (item) => item.price >= from && item.price <= to
   //   );
   // };
+
+  const countByAmountAndName = collections.reduce((acc, { title }) => {
+    if (!acc[title]) {
+      acc[title] = 0;
+    }
+    acc[title]++;
+    return acc;
+  }, {});
+
+  // Преобразуем объект в массив данных для графика
+  const chartData = [['Name', 'Have']];
+  Object.entries(countByAmountAndName).forEach(([name, count]) => {
+    chartData.push([name, count]);
+  });
+
+  // Определяем количество ticks для оси Y
+  const numTicks = Object.values(countByAmountAndName).reduce((max, count) => {
+    return Math.max(max, count);
+  }, 0) + 1; // +1 чтобы учесть 0
+
+  const options = {
+    title: 'We have this',
+    hAxis: { title: 'Name' },
+    vAxis: {
+      title: 'Quantity',
+      minValue: 0,
+      ticks: Array.from({ length: numTicks }).map((_, index) => index),
+    },
+    legend: 'none',
+  };
 
   const toggleDrawer = (open) => () => {
     setIsOpen(open);
@@ -288,7 +319,14 @@ function Body() {
             </div>
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
-            Item Two
+            <Chart
+              chartType="ColumnChart"
+              width="100%"
+              height="400px"
+              data={chartData}
+              options={options}
+              style={{backgroundColor: 'red', zIndex: 111111}}
+            />
           </CustomTabPanel>
         </Box>
       </div>
