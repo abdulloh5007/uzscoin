@@ -433,19 +433,7 @@
     }
 }
 
-@keyframes rotateSum {
-    0% {
-        transform: rotateY(0deg);
-    }
-    50% {
-        transform: rotateY(90deg);
-    }
-    100% {
-        transform: rotateY(0deg);
-    }
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
     .collection-body {
         margin: -40px 10px;
         &-top {
@@ -476,5 +464,125 @@
                 }
             }
         }
+    }
+}
+
+@media screen and  (max-width: 565px) {
+    .collection-body {
+        &-top {
+            .bottom {
+                .right {
+                    .card {
+                        max-width: 200px;
+                        width: 100%;
+                        p {
+                            font-size: 18px;
+                        }
+                        .myPrice {
+                            font-size: 18px;
+                        }
+                        .myImg {
+                            max-width: 200px;
+                            width: 100%;
+                            height: 260px;
+                            .imgBack {
+                                height: 240px;
+                                .sum {
+                                    width: 180px !important;
+                                    height: 80px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and  (max-width: 475px) {
+    .collection-body {
+        &-top {
+            .bottom {
+                .right {
+                    .card {
+                        max-width: 160px;
+                        width: 100%;
+                        p {
+                            font-size: 16px;
+                        }
+                        .myPrice {
+                            font-size: 16px;
+                        }
+                        .myBtn {
+                            font-size: 14px;
+                            .icon {
+                                font-size: 14px !important;
+                            }
+                        }
+                        .myImg {
+                            max-width: 160px;
+                            width: 100%;
+                            height: 240px;
+                            .imgBack {
+                                height: 220px;
+                                .sum {
+                                    width: 140px !important;
+                                    height: 80px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and  (max-width: 375px) {
+    .collection-body {
+        &-top {
+            .top {
+                gap: 10px;
+                .myBtn2 {
+                    padding: 8px 5px;
+                    svg {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .bottom {
+                .right {
+                    .card {
+                        max-width: 140px;
+                        width: 100%;
+                        .myImg {
+                            max-width: 140px;
+                            width: 100%;
+                            height: 240px;
+                            .imgBack {
+                                height: 220px;
+                                .sum {
+                                    width: 120px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes rotateSum {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
     }
 }
