@@ -1,0 +1,161 @@
+.cardDetails {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 40px 40px;
+    &-left {
+        width: 100%;
+        .imgBack {
+            background-image: linear-gradient(to right top, #4e4148, #695e67, #847c88, #a09daa, #bdbecc, #bbc0cd, #bac2cd, #bac4cd, #9ca6ac, #80898c, #666c6d, #4e5151);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 140%;
+            border-radius: 30px;
+            cursor: pointer;
+            .sum {
+                width: 80%;
+                transition: .5s ease all;
+                &:hover {
+                    width: 85%;
+                }
+            }
+            .hover {
+                animation: rotateSum 2s ease infinite;
+            }
+        }
+    }
+    &-right {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        color: white;
+        h2 {
+            font-size: 38px;
+            margin-top: 20px;
+        }
+        h4 {
+            font-size: 20px;
+            color: #E5E5EA;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            transition: .3s ease;
+            img {
+                margin-left: 10px;
+            }
+            &:hover {
+                color: #269efafe;
+            }
+        }
+        .p {
+            margin-top: 15px;
+        }
+        .type {
+            font-weight: 400;
+            padding: 8px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        .priceList {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #212124;
+            width: 100%;
+            b {
+                font-size: 16px;
+                color: #8C8C93;
+                display: flex;
+                align-items: flex-end;
+                font-weight: 500;
+                span {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 5px;
+                    font-size: 22px;
+                    color: #E5E5EA;
+                }
+            }
+            p {
+                display: flex;
+                align-items: flex-end;
+                font-size: 14px;
+                margin-top: 5px;
+                color: #828288;
+                margin-bottom: 20px;
+                svg {
+                    font-size: 18px;
+                }
+            }
+            .myBtn {
+                background-color: #0593FF;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                color: white;
+                border-radius: 15px;
+                margin-top: 10px;
+                border: none;
+                transition: .3s ease all;
+                padding: 10px 0;
+                font-size: 16px;
+                svg {
+                    margin-right: 5px;
+                }
+                &:hover {
+                    background-color: #0593ffd5;
+                }
+            }
+            .myBtn2 {
+                background-color: #212124;
+                border: 1px solid #39393D;
+                &:hover {
+                    background-color: #2e2e32;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .cardDetails {
+        flex-direction: column;
+        &-left {
+            .imgBack {
+                height: 600px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .cardDetails {
+        &-left {
+            .imgBack {
+                height: 500px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .cardDetails {
+        &-left {
+            .imgBack {
+                height: 400px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .cardDetails {
+        &-left {
+            .imgBack {
+                height: 300px;
+            }
+        }
+    }
+}

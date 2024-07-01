@@ -1,13 +1,16 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.scss'
-import Body from './components/collection/body/Body'
-import Header from './components/collection/header/Header'
+import Home from './pages/home/Home'
+import CardDetails from './components/collection/cardDetails/CardDetails'
 
 function App() {
   
   return (
     <div className='App'>
-      <Header />
-      <Body />
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/card/:id' element={<CardDetails />}/>
+      </Routes>
     </div>
   )
 }

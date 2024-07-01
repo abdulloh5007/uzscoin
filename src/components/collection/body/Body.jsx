@@ -1,6 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, CardActions, CardContent, CardMedia, Drawer, FormControl, FormControlLabel, IconButton, InputBase, MenuItem, Paper, Radio, RadioGroup, Select, Tab, Tabs, TextField, } from '@mui/material'
 import './Body.scss'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -13,6 +13,7 @@ import Settings from '@mui/icons-material/SettingsOutlined';
 
 import { collections } from '../../../data/collections';
 import Chart from 'react-google-charts';
+import { Link } from 'react-router-dom';
 
 function Body() {
   const [value, setValue] = useState(0);
@@ -119,6 +120,19 @@ function Body() {
     collection.title.toLowerCase().includes(search.toLowerCase())
   );
 
+  useEffect(() => {
+    const savedSearch = localStorage.getItem('search');
+    if (savedSearch) {
+      setSearch(savedSearch);
+    }
+  }, []);
+
+  const handleSearch = (event) => {
+    const value = event.target.value;
+    setSearch(value);
+    localStorage.setItem('search', value);
+  };
+
   return (
     <div className={myClass('')}>
       <div className={myClass('-top')}>
@@ -144,7 +158,7 @@ function Body() {
                   placeholder="Name or description"
                   inputProps={{ 'aria-label': 'Name or description' }}
                   value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  onChange={handleSearch}
                 />
               </Paper>
               <Button hidden onClick={toggleDrawer(true)} variant='outlined' className='myBtn2'><Filter /></Button>
@@ -291,27 +305,29 @@ function Body() {
                 {
                   filteredCollections?.map((e, i) => (
                     <Card className='card' key={i}>
-                      <div className='myImg'>
-                        <div className="imgBack" onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered()}>
-                          <CardMedia
-                            className={`sum ${hovered === i ? 'hover' : ''}`}
-                            image={e.img}
-                            title={e.title}
-                          />
+                      <Link to={`/card/${e.id}`}>
+                        <div className='myImg'>
+                          <div className="imgBack" onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered()}>
+                            <CardMedia
+                              className={`sum ${hovered === i ? 'hover' : ''}`}
+                              image={e.img}
+                              title={e.title}
+                            />
+                          </div>
+                          <div className="btnGroup">
+                            <Button className='myBtn'><Like className='icon' /> {e.likes}</Button>
+                            <Button className='myBtn'><Share className='icon' /></Button>
+                          </div>
                         </div>
-                        <div className="btnGroup">
-                          <Button className='myBtn'><Like className='icon' /> {e.likes}</Button>
-                          <Button className='myBtn'><Share className='icon' /></Button>
-                        </div>
-                      </div>
-                      <CardContent sx={{ p: 0 }}>
-                        <p>
-                          {e.title}
-                        </p>
-                      </CardContent>
-                      <CardActions sx={{ p: 0 }}>
-                        <p className='myPrice'>$ {e.price}</p>
-                      </CardActions>
+                        <CardContent sx={{ p: 0 }}>
+                          <p>
+                            {e.title}
+                          </p>
+                        </CardContent>
+                        <CardActions sx={{ p: 0 }}>
+                          <p className='myPrice'>$ {e.price}</p>
+                        </CardActions>
+                      </Link>
                     </Card>
                   ))
                 }
@@ -325,7 +341,7 @@ function Body() {
               height="400px"
               data={chartData}
               options={options}
-              style={{backgroundColor: 'red', zIndex: 111111}}
+              style={{ backgroundColor: 'red', zIndex: 111111 }}
             />
           </CustomTabPanel>
         </Box>

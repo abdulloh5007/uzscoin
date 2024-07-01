@@ -20,7 +20,7 @@
                 justify-content: center;
                 transform: translate(50%, -50%);
                 position: absolute;
-                left: -2%;
+                left: 1%;
                 top: 92%;
             }
             img {
@@ -49,7 +49,7 @@
                 color: #6A6A70;
                 margin-top: 5px;
                 font-size: 18px;
-                margin: 0;
+                margin-top: 10px;
                 .icon {
                     color: #E5E5EA;
                 }
@@ -158,6 +158,9 @@
     .collection-head {
         &-panel {
             .pimg {
+                b {
+                    left: -8%;
+                }
                 img {
                     width: 300px !important;
                     right: 40%;
