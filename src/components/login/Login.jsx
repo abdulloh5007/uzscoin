@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.scss';
 import { users } from '../../data/fakeUser';
 
@@ -38,7 +38,7 @@ const LoginPage = () => {
               type="text"
               value={word}
               onChange={(e) => handleInputChange(i, e.target.value)}
-              placeholder={`Word ${i + 1}`}
+              placeholder={`${i + 1}.`}
             />
           ))}
         </div>
@@ -49,13 +49,13 @@ const LoginPage = () => {
               type="text"
               value={word}
               onChange={(e) => handleInputChange(i + 8, e.target.value)}
-              placeholder={`Word ${i + 9}`}
+              placeholder={`${i + 9}.`}
             />
           ))}
         </div>
       </div>
       <button onClick={handleSubmit}>Submit</button>
-      <a href="/">Back to Home</a>
+      <Link to="/">Back to Home</Link>
     </div>
   );
 };

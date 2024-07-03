@@ -1,3 +1,5 @@
+import { k10, k200 } from "./collections"
+
 export const avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThfniC93R4LVY3q47jnybdM21z-XuIsx2rMQ&s'
 
 export const users = [
@@ -33,7 +35,52 @@ export const users = [
         wallet: 'LVJSxQ95EaegLa6rM130HekA5L2v8y51aZoPFU0F-UZSWALET',
         name: 'Admin`s wallet',
         usdt: 7,
-        collections: [],
+        collections: [
+            {
+                id: 11,
+                title: '200,000 $UZS Voucher',
+                type: 'not for sale',
+                desc: '',
+                price: 20,
+                amount: 200000,
+                likes: 177,
+                img: k200,
+                createdAt: new Date(),
+            },
+            {
+                id: 12,
+                title: '200,000 $UZS Voucher',
+                type: 'not for sale',
+                desc: '',
+                price: 20,
+                amount: 200000,
+                likes: 177,
+                img: k200,
+                createdAt: new Date(),
+            },
+            {
+                id: 13,
+                title: '200,000 $UZS Voucher',
+                type: 'not for sale',
+                desc: '',
+                price: 20,
+                amount: 200000,
+                likes: 177,
+                img: k200,
+                createdAt: new Date(),
+            },
+            {
+                id: 14,
+                title: '10,000 $UZS Voucher',
+                type: 'for sale',
+                desc: '',
+                price: 1,
+                amount: 10000,
+                likes: 42,
+                img: k10,
+                createdAt: new Date(),
+            },
+        ],
         password: [
             "admin",
             "admin",

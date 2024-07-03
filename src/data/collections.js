@@ -1,8 +1,8 @@
-const k10 = 'https://upload.wikimedia.org/wikipedia/commons/d/d6/10000_SUM_AVERS.jpg'
-const k20 = 'https://upload.wikimedia.org/wikipedia/commons/7/71/AVERS_2000_SUM.png'
-const k50 = 'https://upload.wikimedia.org/wikipedia/commons/a/af/50_000_sum_new_front.jpg'
-const k100 = 'https://upload.wikimedia.org/wikipedia/commons/f/fb/100_000_sum_new_front.jpg'
-const k200 = 'https://upload.wikimedia.org/wikipedia/commons/d/df/200_000_sum_new_front.jpg'
+export const k10 = 'https://upload.wikimedia.org/wikipedia/commons/d/d6/10000_SUM_AVERS.jpg'
+export const k20 = 'https://upload.wikimedia.org/wikipedia/commons/7/71/AVERS_2000_SUM.png'
+export const k50 = 'https://upload.wikimedia.org/wikipedia/commons/a/af/50_000_sum_new_front.jpg'
+export const k100 = 'https://upload.wikimedia.org/wikipedia/commons/f/fb/100_000_sum_new_front.jpg'
+export const k200 = 'https://upload.wikimedia.org/wikipedia/commons/d/df/200_000_sum_new_front.jpg'
 
 export const collections = [
     {
@@ -106,6 +106,50 @@ export const collections = [
     },
     {
         id: 10,
+        title: '10,000 $UZS Voucher',
+        type: 'for sale',
+        desc: '',
+        price: 1,
+        amount: 10000,
+        likes: 42,
+        img: k10,
+        createdAt: new Date(),
+    },
+    {
+        id: 11,
+        title: '200,000 $UZS Voucher',
+        type: 'not for sale',
+        desc: '',
+        price: 20,
+        amount: 200000,
+        likes: 177,
+        img: k200,
+        createdAt: new Date(),
+    },
+    {
+        id: 12,
+        title: '200,000 $UZS Voucher',
+        type: 'not for sale',
+        desc: '',
+        price: 20,
+        amount: 200000,
+        likes: 177,
+        img: k200,
+        createdAt: new Date(),
+    },
+    {
+        id: 13,
+        title: '200,000 $UZS Voucher',
+        type: 'not for sale',
+        desc: '',
+        price: 20,
+        amount: 200000,
+        likes: 177,
+        img: k200,
+        createdAt: new Date(),
+    },
+    {
+        id: 14,
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
