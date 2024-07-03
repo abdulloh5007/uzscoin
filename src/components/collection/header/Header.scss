@@ -6,6 +6,7 @@
             height: 270px;
             border-radius: 40px;
             position: relative;
+            margin: 0 30px;
             b {
                 background-color: black;
                 color: white;
@@ -158,6 +159,7 @@
     .collection-head {
         &-panel {
             .pimg {
+                margin: 0 10px;
                 b {
                     left: -8%;
                 }

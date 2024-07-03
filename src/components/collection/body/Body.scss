@@ -83,6 +83,8 @@
             justify-content: space-between;
             margin-top: 20px;
             .left {
+                position: sticky;
+                top: 20px;
                 margin-right: 20px;
                 .filter {
                     background-color: transparent;
@@ -403,7 +405,39 @@
                             }
                             .sum {
                                 max-width: 160px !important;
-                                height: 60px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .collection-body {
+        margin: -40px 10px;
+        &-top {
+            .bottom {
+                .right {
+                    .card {
+                        max-width: 250px;
+                        width: 100%;
+                        p {
+                            font-size: 18px;
+                        }
+                        .myPrice {
+                            font-size: 18px;
+                        }
+                        .myImg {
+                            max-width: 250px;
+                            height: 300px;
+                            .imgBack{
+                                height: 240px;
+                            }
+                            .sum {
+                                max-width: 200px !important;
+                                height: 90px !important;
                             }
                         }
                     }
@@ -438,40 +472,6 @@
     }
 }
 
-@media screen and (max-width: 680px) {
-    .collection-body {
-        margin: -40px 10px;
-        &-top {
-            .bottom {
-                .right {
-                    .card {
-                        max-width: 250px;
-                        width: 100%;
-                        p {
-                            font-size: 18px;
-                        }
-                        .myPrice {
-                            font-size: 18px;
-                        }
-                        .myImg {
-                            max-width: 250px;
-                            width: 100%;
-                            height: 300px;
-                            .imgBack {
-                                height: 240px;
-                                .sum {
-                                    width: 230px !important;
-                                    height: 100px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 @media screen and  (max-width: 565px) {
     .collection-body {
         &-top {
@@ -493,8 +493,7 @@
                             .imgBack {
                                 height: 240px;
                                 .sum {
-                                    width: 180px !important;
-                                    height: 80px;
+                                    width: 190px !important;
                                 }
                             }
                         }
@@ -514,7 +513,7 @@
                         max-width: 160px;
                         width: 100%;
                         p {
-                            font-size: 16px;
+                            font-size: 14px;
                         }
                         .myPrice {
                             font-size: 16px;
@@ -533,7 +532,7 @@
                                 height: 220px;
                                 .sum {
                                     width: 140px !important;
-                                    height: 80px;
+                                    height: 65px !important;
                                 }
                             }
                         }
@@ -544,7 +543,7 @@
     }
 }
 
-@media screen and  (max-width: 375px) {
+@media screen and  (max-width: 376px) {
     .collection-body {
         &-top {
             .top {
@@ -568,7 +567,7 @@
                             .imgBack {
                                 height: 220px;
                                 .sum {
-                                    width: 120px !important;
+                                    width: 130px !important;
                                 }
                             }
                         }

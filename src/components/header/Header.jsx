@@ -149,9 +149,16 @@ function Header() {
         {
           !wallet
             ?
-            <Button onClick={handleClickOpen} variant='outlined' className='myBtn'>
-              Create wallet
-            </Button>
+            <div>
+              <Button onClick={handleClickOpen} variant='outlined' className='myBtn'>
+                Create wallet
+              </Button>
+              <Link to='/login'>
+                <Button variant='outlined' className='myBtn'>
+                  Login
+                </Button>
+              </Link>
+            </div>
             :
             <FormControl className='mySelect'>
               <Select

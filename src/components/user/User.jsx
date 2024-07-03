@@ -136,6 +136,7 @@ function User() {
     const handleLogOut = () => {
         navigate('/');
         window.localStorage.removeItem('key');
+        window.localStorage.removeItem('wallet')
     };
 
     if (!userData) {
