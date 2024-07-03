@@ -1,0 +1,19 @@
+.user {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    b {
+        color: white;
+        font-size: 28px;
+        margin-top: 10px;
+    }
+    .myBtn {
+        background-color: #0593ff;
+        color: #ffffff;
+        border-radius: 10px;
+        margin-top: 20px;
+        &:hover {
+            background-color: #38a9ff;
+        }
+    }
+}

@@ -1,0 +1,178 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+  .myBtn {
+    background-color: #0593ff;
+    color: #ffffff;
+    border-radius: 10px;
+    &:hover {
+      background-color: #38a9ff;
+    }
+  }
+
+  .mySelect {
+    border-radius: 10px;
+    .MuiSelect-select {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      width: 40px;
+      border-radius: 50%;
+    }
+    svg {
+      color: #e5e5ea;
+      margin-left: 5px;
+    }
+  }
+}
+li {
+  img {
+    width: 40px;
+    border-radius: 50%;
+  }
+}
+
+.MuiDialog-paper {
+  background-color: #10161f !important;
+}
+
+.headerDialog {
+  overflow-x: hidden !important;
+  display: flex;
+  flex-direction: column;
+
+  .cols {
+    transform: translateX(500px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    &.appearCols {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+
+    &.hideCols {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+  }
+
+  .columns {
+    display: flex;
+    justify-content: space-evenly;
+
+    p {
+      margin-top: 5px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+  }
+
+  .write {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(-500px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    &.appearWrite {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+
+    &.hideWrite {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+
+    .icon {
+      font-size: 88px;
+      color: #0593ff;
+    }
+
+    b {
+      color: #ffffff;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+      margin-top: 10px;
+      text-align: center;
+      color: #9c9c9c;
+    }
+  }
+
+  .input-fields {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    transform: translateX(500px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    &.appearInput-fields {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+
+    &.hideInput-fields {
+      transform: translateX(500px);
+      opacity: 0;
+    }
+
+    h2 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    label {
+      color: #ffffff;
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #333;
+    }
+  }
+
+  .myBtn {
+    background-color: #0593ff;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-top: 20px;
+    &:hover {
+      background-color: #38a9ff;
+    }
+  }
+  .myLink {
+    text-align: center;
+    padding: 8px;
+    transition: 0.5s ease;
+    transform: translateX(500px);
+    opacity: 0;
+  }
+  .appearLink {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+
+  .hideLink {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+}
