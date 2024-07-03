@@ -147,7 +147,7 @@ function Header() {
       <div className="left"></div>
       <div className="right">
         {
-          wallet
+          !wallet
             ?
             <Button onClick={handleClickOpen} variant='outlined' className='myBtn'>
               Create wallet
