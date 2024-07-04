@@ -11,8 +11,8 @@ import { Button } from '@mui/material';
 function CardDetails() {
   const [hovered, setHovered] = useState(null);
 
-  const { id } = useParams();
-  const card = collections.find(c => c.id === parseInt(id, 10));
+  const { uid } = useParams();
+  const card = collections.find(c => c.uid == uid);
 
   if (!card) {
     return <div>Card not found</div>;

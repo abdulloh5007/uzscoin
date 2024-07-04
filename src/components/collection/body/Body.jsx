@@ -305,9 +305,9 @@ function Body() {
                 {
                   filteredCollections?.map((e, i) => (
                     <Card className='card' key={i}>
-                      <Link to={`/card/${e.id}`}>
+                      <Link to={`/card/${e.uid}`}>
                         <div className='myImg'>
-                          <div className="imgBack" onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered()}>
+                          <div className="imgBack" onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered(null)}>
                             <CardMedia
                               className={`sum ${hovered === i ? 'hover' : ''}`}
                               image={e.img}
@@ -315,8 +315,18 @@ function Body() {
                             />
                           </div>
                           <div className="btnGroup">
-                            <Button className='myBtn'><Like className='icon' /> {e.likes}</Button>
-                            <Button className='myBtn'><Share className='icon' /></Button>
+                            <Button className='myBtn' onClick={(event) => {
+                              event.stopPropagation();
+                              event.preventDefault();
+                              const  key = window.localStorage.getItem('key');
+                              if (!key) {
+                                return alert('You have to login first')
+                              }
+                            }}><Like className='icon' /> {e.likes}</Button>
+                            <Button className='myBtn' onClick={(event) => {
+                              event.stopPropagation();
+                              event.preventDefault();
+                            }}><Share className='icon' /></Button>
                           </div>
                         </div>
                         <CardContent sx={{ p: 0 }}>

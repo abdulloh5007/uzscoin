@@ -13,6 +13,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Filter from '@mui/icons-material/FilterListOutlined';
 import Settings from '@mui/icons-material/SettingsOutlined';
+import { collections } from '../../data/collections';
 
 function User() {
     const { wallet } = useParams();
@@ -52,7 +53,10 @@ function User() {
     //   );
     // };
 
-    const countByAmountAndName = userData?.collections?.reduce((acc, { title }) => {
+    const userCollectionIds = userData.collections.map(e => e.id);
+    const userCollections = collections.filter(c => userCollectionIds.includes(c.id));
+
+    const countByAmountAndName = userCollections.reduce((acc, { title }) => {
         if (!acc[title]) {
             acc[title] = 0;
         }
@@ -99,7 +103,7 @@ function User() {
     };
 
     // Функция для сортировки коллекций на основе выбранного значения
-    const sortedCollections = userData?.collections?.slice().sort((a, b) => {
+    const sortedCollections = userCollections?.slice().sort((a, b) => {
         switch (price) {
             case 'lth':
                 return a.price - b.price;
@@ -323,7 +327,7 @@ function User() {
                             {
                                 filteredCollections.map((e, i) => (
                                     <Card className='card' key={i}>
-                                        <Link to={`/card/${e.id}`}>
+                                        <Link to={`/card/${e.uid}`}>
                                             <div className='myImg'>
                                                 <div className="imgBack" onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered()}>
                                                     <CardMedia
@@ -359,7 +363,6 @@ function User() {
                         height="400px"
                         data={chartData}
                         options={options}
-                        style={{ backgroundColor: 'red', zIndex: 111111 }}
                     />
                 </CustomTabPanel>
             </Box>

@@ -4,9 +4,27 @@ export const k50 = 'https://upload.wikimedia.org/wikipedia/commons/a/af/50_000_s
 export const k100 = 'https://upload.wikimedia.org/wikipedia/commons/f/fb/100_000_sum_new_front.jpg'
 export const k200 = 'https://upload.wikimedia.org/wikipedia/commons/d/df/200_000_sum_new_front.jpg'
 
+function generateCustomId() {
+    const prefix = 'UZSlvjs';
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = prefix;
+    
+    // Генерируем оставшиеся 17 символов (24 - 7 (длина префикса))
+    for (let i = 0; i < 17; i++) {
+        const randomIndex = Math.floor(Math.random() * chars.length);
+        result += chars[randomIndex];
+    }
+
+    // Вставляем дефис после 16-го символа
+    result = result.slice(0, 16) + '-' + result.slice(16);
+
+    return result;
+}
+
 export const collections = [
     {
         id: 1,
+        uid: generateCustomId(),
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -18,6 +36,7 @@ export const collections = [
     },
     {
         id: 2,
+        uid: generateCustomId(),
         title: '20,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -29,6 +48,7 @@ export const collections = [
     },
     {
         id: 3,
+        uid: generateCustomId(),
         title: '50,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -40,6 +60,7 @@ export const collections = [
     },
     {
         id: 4,
+        uid: generateCustomId(),
         title: '100,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -51,6 +72,7 @@ export const collections = [
     },
     {
         id: 5,
+        uid: generateCustomId(),
         title: '200,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -62,6 +84,7 @@ export const collections = [
     },
     {
         id: 6,
+        uid: generateCustomId(),
         title: '100,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -73,6 +96,7 @@ export const collections = [
     },
     {
         id: 7,
+        uid: generateCustomId(),
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -84,6 +108,7 @@ export const collections = [
     },
     {
         id: 8,
+        uid: generateCustomId(),
         title: '10,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -95,6 +120,7 @@ export const collections = [
     },
     {
         id: 9,
+        uid: generateCustomId(),
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -106,6 +132,7 @@ export const collections = [
     },
     {
         id: 10,
+        uid: generateCustomId(),
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -117,6 +144,7 @@ export const collections = [
     },
     {
         id: 11,
+        uid: generateCustomId(),
         title: '200,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -128,6 +156,7 @@ export const collections = [
     },
     {
         id: 12,
+        uid: generateCustomId(),
         title: '200,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -139,6 +168,7 @@ export const collections = [
     },
     {
         id: 13,
+        uid: generateCustomId(),
         title: '200,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -150,6 +180,7 @@ export const collections = [
     },
     {
         id: 14,
+        uid: generateCustomId(),
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
