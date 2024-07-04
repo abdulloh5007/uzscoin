@@ -10,6 +10,7 @@ import Share from '@mui/icons-material/IosShareOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Filter from '@mui/icons-material/FilterListOutlined';
 import Settings from '@mui/icons-material/SettingsOutlined';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import { collections } from '../../../data/collections';
 import Chart from 'react-google-charts';
@@ -132,6 +133,9 @@ function Body() {
     setSearch(value);
     localStorage.setItem('search', value);
   };
+
+  const [filteredCollections2, setFilteredCollections2] = useState(filteredCollections);
+  const [like, setLike] = useState(new Map());
 
   return (
     <div className={myClass('')}>
@@ -303,7 +307,7 @@ function Body() {
               </div>
               <div className="right">
                 {
-                  filteredCollections?.map((e, i) => (
+                  filteredCollections2?.map((e, i) => (
                     <Card className='card' key={i}>
                       <Link to={`/card/${e.uid}`}>
                         <div className='myImg'>
@@ -318,11 +322,29 @@ function Body() {
                             <Button className='myBtn' onClick={(event) => {
                               event.stopPropagation();
                               event.preventDefault();
-                              const  key = window.localStorage.getItem('key');
-                              if (!key) {
-                                return alert('You have to login first')
+                              const wallet = window.localStorage.getItem('wallet');
+                              if (!wallet) {
+                                return alert('You have to login first');
                               }
-                            }}><Like className='icon' /> {e.likes}</Button>
+                              const likedCollection = filteredCollections.find(collection => collection.id === e.id);
+                              if (likedCollection.likedFrom.includes(wallet)) {
+                                return alert('You have already liked this collection');
+                              }
+                              likedCollection.likes += 1;
+                              likedCollection.likedFrom.push(wallet);
+
+                              // Create a new array to trigger a re-render
+                              const updatedCollections = filteredCollections.map(collection =>
+                                collection.id === e.id ? { ...likedCollection } : collection
+                              );
+                              setFilteredCollections2(updatedCollections);
+
+                              // Update the like status for the specific collection
+                              setLike(prev => new Map(prev).set(e.id, true));
+                            }}>
+                              {like.get(e.id) === true ? <FavoriteIcon /> : <Like className='icon' />}
+                              {e.likes}
+                            </Button>
                             <Button className='myBtn' onClick={(event) => {
                               event.stopPropagation();
                               event.preventDefault();

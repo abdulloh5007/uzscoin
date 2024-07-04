@@ -33,6 +33,9 @@ export const collections = [
         likes: 0,
         img: k10,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 2,
@@ -45,6 +48,9 @@ export const collections = [
         likes: 5,
         img: k20,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 3,
@@ -57,6 +63,9 @@ export const collections = [
         likes: 11,
         img: k50,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 4,
@@ -69,6 +78,9 @@ export const collections = [
         likes: 20,
         img: k100,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 5,
@@ -81,6 +93,9 @@ export const collections = [
         likes: 177,
         img: k200,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 6,
@@ -93,6 +108,9 @@ export const collections = [
         likes: 34,
         img: k100,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 7,
@@ -105,6 +123,9 @@ export const collections = [
         likes: 42,
         img: k10,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 8,
@@ -117,6 +138,9 @@ export const collections = [
         likes: 42,
         img: k10,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 9,
@@ -129,6 +153,9 @@ export const collections = [
         likes: 42,
         img: k10,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 10,
@@ -141,6 +168,9 @@ export const collections = [
         likes: 42,
         img: k10,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 11,
@@ -153,6 +183,9 @@ export const collections = [
         likes: 177,
         img: k200,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 12,
@@ -165,6 +198,9 @@ export const collections = [
         likes: 177,
         img: k200,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 13,
@@ -177,6 +213,9 @@ export const collections = [
         likes: 177,
         img: k200,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
     {
         id: 14,
@@ -189,5 +228,8 @@ export const collections = [
         likes: 42,
         img: k10,
         createdAt: new Date(),
+        likedFrom: [
+            
+        ],
     },
 ]
