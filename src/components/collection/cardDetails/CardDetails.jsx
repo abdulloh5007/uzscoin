@@ -43,7 +43,7 @@ function CardDetails() {
     // Найти пользователя по userWallet
     const foundUser = users.find(user => user.wallet === userWallet);
     if (!foundUser) {
-      alert(`User not found`);
+      alert(`You have to login first or add a new wallet`);
       return;
     }
   
