@@ -307,7 +307,7 @@ function Body() {
               </div>
               <div className="right">
                 {
-                  filteredCollections2?.map((e, i) => (
+                  filteredCollections?.map((e, i) => (
                     <Card className='card' key={i}>
                       <Link to={`/card/${e.uid}`}>
                         <div className='myImg'>
@@ -326,12 +326,18 @@ function Body() {
                               if (!wallet) {
                                 return alert('You have to login first');
                               }
+
                               const likedCollection = filteredCollections.find(collection => collection.id === e.id);
-                              if (likedCollection.likedFrom.includes(wallet)) {
-                                return alert('You have already liked this collection');
+                              if (!likedCollection) return;
+
+                              const hasLiked = likedCollection.likedFrom.includes(wallet);
+                              if (hasLiked) {
+                                likedCollection.likes -= 1;
+                                likedCollection.likedFrom = likedCollection.likedFrom.filter(id => id !== wallet);
+                              } else {
+                                likedCollection.likes += 1;
+                                likedCollection.likedFrom.push(wallet);
                               }
-                              likedCollection.likes += 1;
-                              likedCollection.likedFrom.push(wallet);
 
                               // Create a new array to trigger a re-render
                               const updatedCollections = filteredCollections.map(collection =>
@@ -340,9 +346,10 @@ function Body() {
                               setFilteredCollections2(updatedCollections);
 
                               // Update the like status for the specific collection
-                              setLike(prev => new Map(prev).set(e.id, true));
+                              setLike(prev => new Map(prev).set(e.id, !hasLiked));
+                              console.log(like);
                             }}>
-                              {like.get(e.id) === true ? <FavoriteIcon /> : <Like className='icon' />}
+                              {like.get(e.id) ? <FavoriteIcon sx={{color: 'red !important'}} className='icon'/> : <Like className='icon' />}
                               {e.likes}
                             </Button>
                             <Button className='myBtn' onClick={(event) => {

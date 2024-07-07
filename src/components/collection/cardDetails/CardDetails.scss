@@ -3,6 +3,25 @@
     justify-content: space-between;
     gap: 40px;
     margin: 40px 40px;
+    .myBtn {
+        background-color: #0593FF;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: white;
+        border-radius: 15px;
+        margin-top: 10px;
+        border: none;
+        transition: .3s ease all;
+        padding: 10px 0;
+        font-size: 16px;
+        svg {
+            margin-right: 5px;
+        }
+        &:hover {
+            background-color: #0593ffd5;
+        }
+    }
     &-left {
         width: 100%;
         .imgBack {

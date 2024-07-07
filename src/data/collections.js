@@ -8,7 +8,7 @@ function generateCustomId() {
     const prefix = 'UZSlvjs';
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = prefix;
-    
+
     // Генерируем оставшиеся 17 символов (24 - 7 (длина префикса))
     for (let i = 0; i < 17; i++) {
         const randomIndex = Math.floor(Math.random() * chars.length);
@@ -25,6 +25,7 @@ export const collections = [
     {
         id: 1,
         uid: generateCustomId(),
+        owner: '',
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -34,12 +35,13 @@ export const collections = [
         img: k10,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 2,
         uid: generateCustomId(),
+        owner: '',
         title: '20,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -49,12 +51,13 @@ export const collections = [
         img: k20,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 3,
         uid: generateCustomId(),
+        owner: '',
         title: '50,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -64,12 +67,13 @@ export const collections = [
         img: k50,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 4,
         uid: generateCustomId(),
+        owner: '',
         title: '100,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -79,12 +83,13 @@ export const collections = [
         img: k100,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 5,
         uid: generateCustomId(),
+        owner: '',
         title: '200,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -94,12 +99,13 @@ export const collections = [
         img: k200,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 6,
         uid: generateCustomId(),
+        owner: '',
         title: '100,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -109,12 +115,13 @@ export const collections = [
         img: k100,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 7,
         uid: generateCustomId(),
+        owner: '',
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -124,12 +131,13 @@ export const collections = [
         img: k10,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 8,
         uid: generateCustomId(),
+        owner: '',
         title: '10,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -139,12 +147,13 @@ export const collections = [
         img: k10,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 9,
         uid: generateCustomId(),
+        owner: '',
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -154,12 +163,13 @@ export const collections = [
         img: k10,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 10,
         uid: generateCustomId(),
+        owner: '',
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -169,12 +179,13 @@ export const collections = [
         img: k10,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 11,
         uid: generateCustomId(),
+        owner: 'LVJSxQ95EaegLa6rM130HekA5L2v8y51aZoPFU0F-UZSWALET',
         title: '200,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -184,12 +195,13 @@ export const collections = [
         img: k200,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 12,
         uid: generateCustomId(),
+        owner: 'LVJSxQ95EaegLa6rM130HekA5L2v8y51aZoPFU0F-UZSWALET',
         title: '200,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -199,12 +211,13 @@ export const collections = [
         img: k200,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 13,
         uid: generateCustomId(),
+        owner: 'LVJSxQ95EaegLa6rM130HekA5L2v8y51aZoPFU0F-UZSWALET',
         title: '200,000 $UZS Voucher',
         type: 'not for sale',
         desc: '',
@@ -214,12 +227,13 @@ export const collections = [
         img: k200,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
     {
         id: 14,
         uid: generateCustomId(),
+        owner: 'LVJSxQ95EaegLa6rM130HekA5L2v8y51aZoPFU0F-UZSWALET',
         title: '10,000 $UZS Voucher',
         type: 'for sale',
         desc: '',
@@ -229,7 +243,7 @@ export const collections = [
         img: k10,
         createdAt: new Date(),
         likedFrom: [
-            
+
         ],
     },
 ]

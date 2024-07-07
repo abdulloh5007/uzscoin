@@ -140,6 +140,9 @@ function Header() {
       window.localStorage.removeItem('wallet')
       window.localStorage.removeItem('key')
     }
+    else if (val == 'home') {
+      navigate('/')
+    }
   }
 
   return (
@@ -181,6 +184,7 @@ function Header() {
                   <img src={avatar} alt="avatar" />
                   <MenuIcon />
                 </MenuItem>
+                <MenuItem className='selectItem' value='home'>Home</MenuItem>
                 <MenuItem className='selectItem' value='profile'>Profile</MenuItem>
                 <MenuItem className='selectItem' value='logout'>Log Out</MenuItem>
               </Select>

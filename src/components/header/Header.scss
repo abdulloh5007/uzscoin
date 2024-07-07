@@ -4,7 +4,7 @@
   padding: 20px;
   position: sticky;
   top: 0px;
-  z-index: 100;
+  z-index: 999;
   background-color: #16171c;
 
   .myBtn {
@@ -24,7 +24,7 @@
       align-items: center;
     }
     img {
-      width: 40px;
+      width: 30px;
       border-radius: 50%;
     }
     svg {
@@ -35,7 +35,7 @@
 }
 li {
   img {
-    width: 40px;
+    width: 30px;
     border-radius: 50%;
   }
 }
